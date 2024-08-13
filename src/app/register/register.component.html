@@ -1,0 +1,46 @@
+<!-- register.component.html -->
+<div class="container">
+  <img class="loginimg" src="https://www.scnsoft.com/blog-pictures/software-development-outsourcing/leave-management-software.png">
+  <img class="logo-overlay" src="https://uploads-ssl.webflow.com/60cb8979aa0d47232e309268/60cb9e4df1877a2388b5c590_IVIS_Logo-p-500.png" alt="Logo">
+  <div id="wrapper">
+    <div class="form">
+      <form [formGroup]="registerformE">
+        <h1>Sign Up</h1>
+        
+        <select id="Department" formControlName="departmentName">
+          <option value="">Select Department</option>
+          <option *ngFor="let dept of departments" [value]="dept">{{ dept }}</option>
+        </select>
+
+        <input type="text" id="name" formControlName="name" placeholder="Name">
+        <span style="color: red;" *ngIf="registerformE.controls['name'].invalid && submitted">*required</span>
+        
+    
+
+        <input [type]="changetype ? 'password' : 'text'" id="password" formControlName="password" placeholder="Password">
+        <span class="eye" (click)="viewpass()"><i [ngClass]="visible ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'"></i></span>
+        <span  style="color: red;" *ngIf="registerformE.controls['password'].invalid && submitted">*required</span>
+
+        
+  
+        <select id="role" formControlName="role">
+          <option value="">Select Role</option>
+          <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+        </select>
+        
+        <input type="number" id="Phone" formControlName="mobileNo" placeholder="Phone Number">
+        
+        <input type="text" id="Email" formControlName="email" placeholder="Email">
+        <div>
+        <select   id="Manager" formControlName="manager" >
+          <option value="" >Select managerId<span class="required-asterisk">*</span></option>
+          <option *ngFor="let id of managerIds" [value]="id">{{ id }}</option>
+        </select> 
+      </div>
+        
+        <button class="btn" type="submit" (click)="registerE()">Sign Up
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
