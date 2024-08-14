@@ -33,6 +33,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ProfileComponent } from './employee/profile/profile.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ApproveDialogComponent } from './manager/approve-dialog/approve-dialog.component';
+import { SpinnerComponent } from './register/spinner/spinner.component';
 
 
 
@@ -54,6 +55,7 @@ import { ApproveDialogComponent } from './manager/approve-dialog/approve-dialog.
     DialogComponent,
     ProfileComponent,
     ApproveDialogComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,6 @@ import { ApproveDialogComponent } from './manager/approve-dialog/approve-dialog.
     MatFormFieldModule,
     FormsModule,
     MatProgressSpinnerModule,
-    
   ],
   providers: [
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher, }

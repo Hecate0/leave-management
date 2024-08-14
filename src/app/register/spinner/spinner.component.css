@@ -1,0 +1,16 @@
+.Box{
+    height: 200px;
+    width: 200px;
+    align-content: center;
+    margin-left: 70px;
+}
+.button{
+    margin-left: 50px;
+}
+button{
+    height: 100px;
+    width: 25px;
+}
+h1{
+    color: Black;
+}
