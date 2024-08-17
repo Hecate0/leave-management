@@ -814,3 +814,20 @@ button{
   padding-bottom: 5px;
 
 }
+.search-bars-container{
+  display: flex;
+  gap: 50px;
+  margin-left: 20%;
+}
+.search-bar button{
+  margin-left: 10px;
+  background-color: #1b598f;
+  width: 100px;
+  height: 35px;
+  border-radius: 10%;
+  color: white;
+}
+.search-bar input{
+  width: 200px;
+  height: 35px;
+}

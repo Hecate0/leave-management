@@ -13,14 +13,14 @@
         </select>
 
         <input type="text" id="name" formControlName="name" placeholder="Name">
-        <span style="color: red;" *ngIf="registerformE.controls['name'].invalid && submitted">*required</span>
-        
-    
-
+        <div class="requiredname">
+        <span style="color: red;" *ngIf="registerformE.controls['name'].invalid && clicked">*required</span>
+        <span style="color: red;" *ngIf=" registerformE.controls['name'].touched">*First letter is capital.It should not contaild spaces.it should be atleast 6 letters </span>
+      </div>
         <input [type]="changetype ? 'password' : 'text'" id="password" formControlName="password" placeholder="Password">
         <span class="eye" (click)="viewpass()"><i [ngClass]="visible ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'"></i></span>
-        <span  style="color: red;" *ngIf="registerformE.controls['password'].invalid && submitted">*required</span>
-
+        <span  style="color: red;" *ngIf="registerformE.controls['password'].invalid && clicked">*required</span>
+        <span style="color: red;" *ngIf="registerformE.controls['password'].touched">*Atleast 6 charcters should contain uppercase, lowercase,a special charactor and numbers </span>
         
   
         <select id="role" formControlName="role">

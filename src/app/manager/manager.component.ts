@@ -95,7 +95,7 @@ export class ManagerComponent {
   Data: DateInfo[] = [];
   filteredData: DateInfo[] = [];
   id:string=''
-
+search:any=FormGroup
   status:string='';
   leaves: Leave[] = [];
   userId:string='';
@@ -212,10 +212,14 @@ holidays = [
   private matDialog: MatDialog,
   private fb:FormBuilder
  ){ }
-
+fiterdata:any
  mainData:any
  ngOnInit() {
-
+this.search = this.fb.group({
+  name:[''],
+  email:[''],
+  departmentName:['']
+})
 this.reasonForm = this.fb.group({
   declineReason :['']
 });
@@ -348,6 +352,39 @@ decline(){
 }
 toggleDropdown(request:any) {
   request.expanded = !request.expanded;
+}
+searchName() {
+  const name = this.search.get('name')?.value;
+  const mtoken = localStorage.getItem('mtoken') ||''
+  if (name) {
+    this.leave.filtername(name,mtoken).subscribe((res: any) => {
+      this.Data = res;
+      this.dataSource.data = this.Data;
+    });
+  }
+}
+
+searchEmail() {
+  const email = this.search.get('email')?.value;
+   const mtoken = localStorage.getItem('mtoken') ||''
+   
+  if (email) {
+    this.leave.filteremail(email,mtoken).subscribe((res: any) => {
+      this.Data = res;
+      this.dataSource.data = this.Data;
+    });
+  }
+}
+
+searchDepartmentName() {
+  const departmentName = this.search.get('departmentName')?.value;
+   const mtoken = localStorage.getItem('mtoken') ||''
+  if (departmentName) {
+    this.leave.filterdepartmentName(departmentName,mtoken).subscribe((res: any) => {
+      this.Data = res;
+      this.dataSource.data = this.Data;
+    });
+  }
 }
 
 }

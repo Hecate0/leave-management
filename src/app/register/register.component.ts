@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
   employeeIds: string[] = ['2427RS01E1', '2427RS01E2', '2427RS01E3', '2427RS01E4', '2427RS01E5', '2427RS01E6', '2427RS01E9', '2427RS01E7', '2427RS01B7', '2425RS01V5'];
   departments: string[] = ['Software', 'J1C', 'Monitering', 'Rapido', 'Digital Marketing'];
   roles: string[] = ['ROLE_EMPLOYEE', 'ROLE_MANAGER'];
-  submitted: boolean = false;
+  clicked: boolean = false;
 
   constructor(
     private router: Router,
@@ -64,7 +64,7 @@ export class RegisterComponent implements OnInit {
   }
 
   registerE() {
-    this.submitted = true;
+    this.clicked = true;
     if (this.registerformE.valid) {
       const dialogRef = this.dialog.open(SpinnerComponent, {
         width: '300px',

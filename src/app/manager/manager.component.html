@@ -28,10 +28,22 @@
 </header>
 
 <div *ngIf="activeButton === 'dashboard'" style="color: black; background-color: #F0F8FF;" class="dashboard-container">
-  <div class="search-container">
-    <h1>Employee Data</h1>
-    <input type="text" placeholder="Search..." [(ngModel)]="filterValue" (input)="applyFilter()" />
+  <form [formGroup]="search">
+  <div class="search-bars-container">
+    <div class="search-bar" >
+      <input type="text" placeholder="Search Employee Name"  />
+      <button (click)="searchName()" formControlName="name">Search</button>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search Employee Email" />
+      <button (click)="searchEmail()" formControlName="email">Search</button>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search Employee Department"  />
+      <button (click)="searchDepartmentName()" formControlName="departmentName">Search</button>
+    </div>
   </div>
+</form>
   <div class="leaveapproval">
     <table class="table table">
       <thead class="primary">

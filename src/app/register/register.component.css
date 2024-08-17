@@ -148,3 +148,9 @@ form{
     transform: translateY(-50%);
     color: black;
 }
+.requiredname{
+    display: block;
+}
+span{
+    padding-left: 10%;
+}
