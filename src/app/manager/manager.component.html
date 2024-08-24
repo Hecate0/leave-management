@@ -31,16 +31,16 @@
   <form [formGroup]="search">
   <div class="search-bars-container">
     <div class="search-bar" >
-      <input type="text" placeholder="Search Employee Name"  />
-      <button (click)="searchName()" formControlName="name">Search</button>
+      <input type="text" placeholder="Search Employee Name" formControlName="name" />
+      <button (click)="searchName()" >Search</button>
     </div>
     <div class="search-bar">
-      <input type="text" placeholder="Search Employee Email" />
-      <button (click)="searchEmail()" formControlName="email">Search</button>
+      <input type="text" placeholder="Search Employee Email" formControlName="email"/>
+      <button (click)="searchEmail()" >Search</button>
     </div>
     <div class="search-bar">
-      <input type="text" placeholder="Search Employee Department"  />
-      <button (click)="searchDepartmentName()" formControlName="departmentName">Search</button>
+      <input type="text" placeholder="Search Employee Department"  formControlName="departmentName" />
+      <button (click)="searchDepartmentName()">Search</button>
     </div>
   </div>
 </form>
@@ -53,18 +53,23 @@
           <th scope="col">Mobile Number</th>
           <th scope="col">Email</th>
           <th scope="col">Department Name</th>
-          <th scope="col">status</th>
+          <th scope="col">Sick Leave</th>
+          <th scope="col">Privilege Leave</th>
+          <th scope="col">Casual Leave</th>
+          <th scope="col">Attendance</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of mainData" [ngClass]="{'expanded': item.expanded}" (click)="toggleRow(item)">
+        <tr *ngFor="let item of mainData" >
           <td>{{item.userId}}</td>
           <td>{{item.employeeName}}</td>
           <td>{{item.mobileNo}}</td>
           <td>{{item.email}}</td>
           <td>{{item.departmentName}}</td>
-          <td>{{item.status}}</td>
-          
+          <td>{{item.sick}}</td>
+          <td>{{item.privilege}}</td>
+          <td>{{item.casual}}</td>
+          <td>{{item.attendance}}</td>
         </tr>
         <tr *ngFor="let item of mainData" class="detail-row" [ngClass]="{'expanded': item.expanded}">
           <td colspan="5">
@@ -171,7 +176,10 @@
           </div>
           <div class="leave-date">
             <span class="request-date">{{request.appliedDate}}</span>
-            <span class="leave-period">{{request.fromDate}} - {{request.toDate}}</span>
+            <span class="leave-period">
+              <div> {{request.fromDate}} </div>
+              <div>{{request.toDate}}</div>
+            </span>
           </div>
         </div>
         <div class="action-buttons">

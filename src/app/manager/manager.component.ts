@@ -42,6 +42,11 @@ interface DateInfo {
   departmentName: string;
   userId: string;
   expanded?: boolean;
+  attendance:string;
+  casual:string;
+  sick:string;
+  privilege:string;
+
 }
 interface approve{
 leaveId: string;
@@ -211,15 +216,17 @@ holidays = [
   private alert :AlertService,
   private matDialog: MatDialog,
   private fb:FormBuilder
- ){ }
+ ){
+  this.search = this.fb.group({
+    name: [''],
+    email: [''],
+    departmentName: [''],
+  });
+  }
 fiterdata:any
  mainData:any
  ngOnInit() {
-this.search = this.fb.group({
-  name:[''],
-  email:[''],
-  departmentName:['']
-})
+
 this.reasonForm = this.fb.group({
   declineReason :['']
 });

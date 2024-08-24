@@ -61,21 +61,21 @@ export class LeaveService {
     return this.http.get(url,{ headers})
   }
   filtername(name:string , token:string){
-    let url ="/api/v1/search"
+    let url = this.Url +  "/api/v1/search"
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     const params = new HttpParams().set('name', name);
     return this.http.get(url, { headers:headers, params:params });
 
   }
   filteremail(email:string , token:string){
-    let url ="/api/v1/search"
+    let url =this.Url +  "/api/v1/search"
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     const params = new HttpParams().set('email', email);
     return this.http.get(url, { headers:headers, params:params });
 
   }
   filterdepartmentName(departmentName:string , token:string){
-    let url ="/api/v1/search"
+    let url =this.Url +  "/api/v1/search"
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     const params = new HttpParams().set('departmentName',departmentName);
     return this.http.get(url, { headers:headers, params:params });
