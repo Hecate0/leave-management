@@ -19,7 +19,7 @@ import { EmployeesignupComponent } from './register/employeesignup/employeesignu
 import { MatIconModule } from '@angular/material/icon';
 import { LoginsliderComponent } from './login/loginslider/loginslider.component';
 import { MatInputModule } from '@angular/material/input';
-import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core'; // Add this line
+import { ErrorStateMatcher, MatOption, MatOptionModule, ShowOnDirtyErrorStateMatcher } from '@angular/material/core'; // Add this line
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ChartModule } from 'angular-highcharts';
 import { MatCardModule } from '@angular/material/card';
@@ -34,6 +34,7 @@ import { ProfileComponent } from './employee/profile/profile.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ApproveDialogComponent } from './manager/approve-dialog/approve-dialog.component';
 import { SpinnerComponent } from './register/spinner/spinner.component';
+
 
 
 
@@ -76,6 +77,7 @@ import { SpinnerComponent } from './register/spinner/spinner.component';
     MatFormFieldModule,
     FormsModule,
     MatProgressSpinnerModule,
+    MatOptionModule
   ],
   providers: [
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher, }

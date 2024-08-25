@@ -23,6 +23,7 @@ export class RegisterComponent implements OnInit {
   departments: string[] = ['Software', 'J1C', 'Monitering', 'Rapido', 'Digital Marketing'];
   roles: string[] = ['ROLE_EMPLOYEE', 'ROLE_MANAGER'];
   clicked: boolean = false;
+  emailFormControl:any=FormGroup;
 
   constructor(
     private router: Router,
