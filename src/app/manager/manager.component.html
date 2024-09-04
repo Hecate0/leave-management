@@ -3,7 +3,7 @@
     <img class="logo-overlay" src="https://uploads-ssl.webflow.com/60cb8979aa0d47232e309268/60cbd0c9816f3e2355324080_IVIS_Logo_white.png" alt="Logo">
   </div>
   <div class="links">
-    <button (click)="showText('dashboard')" [ngClass]="{'active': activeButton === 'dashboard'}">
+    <button (click)="showText('dashboard')" [ngClass]="{'active': activeButton === 'dashboard'}" >
       <div class="link">DashBoard</div>
     </button>
     <button (click)="showText('leaves')" [ngClass]="{'active': activeButton === 'leaves'}">
@@ -31,17 +31,9 @@
   <form [formGroup]="search">
   <div class="search-bars-container">
     <div class="search-bar" >
-      <input type="text" placeholder="Search Employee Name" formControlName="name" />
-      <button (click)="searchName()" >Search</button>
+      <input type="text" placeholder="Search Employee Name" [(ngModel)]="searchText" formControlName="name" />
     </div>
-    <div class="search-bar">
-      <input type="text" placeholder="Search Employee Email" formControlName="email"/>
-      <button (click)="searchEmail()" >Search</button>
-    </div>
-    <div class="search-bar">
-      <input type="text" placeholder="Search Employee Department"  formControlName="departmentName" />
-      <button (click)="searchDepartmentName()">Search</button>
-    </div>
+ 
   </div>
 </form>
   <div class="leaveapproval">
@@ -60,7 +52,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of mainData" >
+        <tr *ngFor="let item of mainData | search : searchText" >
           <td>{{item.userId}}</td>
           <td>{{item.employeeName}}</td>
           <td>{{item.mobileNo}}</td>

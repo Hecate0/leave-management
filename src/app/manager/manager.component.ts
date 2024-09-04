@@ -226,6 +226,7 @@ holidays = [
 fiterdata:any
  mainData:any
  ngOnInit() {
+  this.searchName()
 
 this.reasonForm = this.fb.group({
   declineReason :['']
@@ -360,13 +361,17 @@ decline(){
 toggleDropdown(request:any) {
   request.expanded = !request.expanded;
 }
+
+searchText:any
+DataForSearch:any = [];
 searchName() {
   const name = this.search.get('name')?.value;
   const mtoken = localStorage.getItem('mtoken') ||''
   if (name) {
     this.leave.filtername(name,mtoken).subscribe((res: any) => {
-      this.Data = res;
-      this.dataSource.data = this.Data;
+      console.log(res)
+      this.DataForSearch = res;
+      // this.dataSource.data = this.Data;
     });
   }
 }

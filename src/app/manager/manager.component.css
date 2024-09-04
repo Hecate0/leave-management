@@ -819,9 +819,12 @@ button{
 }
 .search-bars-container{
   display: flex;
-  gap: 50px;
-  margin-left: 20%;
+  gap: 300px;
+  margin-left: 10%;
 }
+
+
+
 .search-bar button{
   margin-left: 10px;
   background-color: #1b598f;

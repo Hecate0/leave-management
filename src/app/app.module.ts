@@ -34,6 +34,7 @@ import { ProfileComponent } from './employee/profile/profile.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ApproveDialogComponent } from './manager/approve-dialog/approve-dialog.component';
 import { SpinnerComponent } from './register/spinner/spinner.component';
+import { SearchPipe } from './search.pipe';
 
 
 
@@ -57,6 +58,7 @@ import { SpinnerComponent } from './register/spinner/spinner.component';
     ProfileComponent,
     ApproveDialogComponent,
     SpinnerComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
