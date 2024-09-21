@@ -17,9 +17,6 @@ export class SpinnerComponent {
     setTimeout(() => {
       this.showSpinner = false;
       this.showSuccessMessage = true;
-      setTimeout(() => {
-        this.closeDialog();
-      }, 10000); // 2 seconds delay for the success message
     }, 2000); // 2 seconds delay for the spinner
   }
 

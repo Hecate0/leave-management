@@ -820,20 +820,12 @@ button{
 .search-bars-container{
   display: flex;
   gap: 300px;
-  margin-left: 10%;
+  margin-left: 35%;
 }
 
-
-
-.search-bar button{
-  margin-left: 10px;
-  background-color: #1b598f;
-  width: 100px;
-  height: 35px;
-  border-radius: 10%;
-  color: white;
-}
 .search-bar input{
-  width: 200px;
-  height: 35px;
+  width: 500px;
+  height: 50px;
+  
+
 }
